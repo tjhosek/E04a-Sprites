@@ -26,10 +26,14 @@ class MyGame(arcade.Window):
         animal = 'panda'
         x = 400
         y = 300
-        self.animal_sprite = arcade.Sprite("assets/{animal}.png".format(animal=animal), 0.5)
-        self.animal_sprite.center_x = x
-        self.animal_sprite.center_y = y
-        self.animal_list.append(self.animal_sprite)
+        for i in range(21):
+            self.animal_sprite = arcade.Sprite("assets/{animal}.png".format(animal=animal), 0.5)
+            self.animal_sprite.center_x = x
+            self.animal_sprite.center_y = y
+            self.animal_list.append(self.animal_sprite)
+            animal = random.choice(animals)
+            x = random.randint(0,800)
+            y = random.randint(0,600)
         
 
     def on_draw(self):
